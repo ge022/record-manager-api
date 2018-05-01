@@ -8,6 +8,7 @@ using Tutorial.Models;
 
 namespace record_manager_api.Controllers
 {
+    
     [Produces("application/json")]
     [Route("api/v1/records")]
     public class RecordController : Controller
@@ -21,7 +22,7 @@ namespace record_manager_api.Controllers
 
         // GET api/v1/records
         [HttpGet]
-        public async Task<IActionResult> getAll() {
+        public async Task<IActionResult> getRecords() {
             var records = await _context.Records.ToListAsync();
             
             return Ok(records); 
